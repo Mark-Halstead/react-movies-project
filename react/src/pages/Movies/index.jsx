@@ -1,10 +1,30 @@
-import React from 'react'
+import {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom'
 
-const Movies = () => {
+function Movies() {
+  useEffect(() => {
+    fetchItems()
+  }, [])
+
+  const [items, setItems] = useState([]);
+
+  const fetchItems = async () => {
+    const response = await fetch('');
+    const movieData = await response.json()
+    setItems(movieData.data)
+  }
+
   return (
-    <>
-        <h1>Hello world</h1>
-    </>
+    <div>
+      <h1>Movies Page</h1>
+      <div>
+        {items.map((el) => (
+          <p key={el.id}>
+          <Link to={`/movies/${el.id}`}>{el.name}</Link> 
+          </p>
+        ))}
+      </div>
+    </div>
   )
 }
 

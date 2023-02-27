@@ -18,7 +18,6 @@ const SearchForm = () => {
         value=""
         onChange={handleChange}
       />
-      {error.show && <div className='error'>{error.msg}</div>}
     </form>
   )
 }

@@ -3,6 +3,7 @@ body {
   font-family: sans-serif;
   line-height: 1.5;
   font-size: 0.875rem;
+  background-color: rgb(246, 210, 242);
 }
 ul {
   list-style-type: none;
