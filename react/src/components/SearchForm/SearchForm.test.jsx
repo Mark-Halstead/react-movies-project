@@ -10,3 +10,33 @@ expect.extend(matchers);
 
 
 import SearchForm from './index';
+
+
+describe('SearchForm', () => {
+    beforeEach(() => {
+  
+      render(
+        <BrowserRouter>
+          <SearchForm />
+        </BrowserRouter>
+      );
+    });
+  
+    afterEach(() => {
+
+      cleanup();
+    });
+  
+    it('should update the input value when typed in', () => {
+
+      const input = screen.getByRole('textbox');
+  
+
+      userEvent.type(input, 'Jurassic Park');
+  
+
+      expect(input).toHaveValue('Jurassic Park');
+    });
+  });
+  
+

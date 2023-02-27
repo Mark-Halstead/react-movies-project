@@ -9,4 +9,24 @@ import matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
 
 
-import MovieItem from './index';
+import ShowItem from './index';
+
+
+describe('ShowItem', () => {
+    beforeEach(() => {
+      render(
+        <BrowserRouter>
+          <ShowItem />
+        </BrowserRouter>
+      )
+    })
+  
+    afterEach(cleanup)
+  
+    it('should render without errors', () => {
+      expect(screen.getByRole('heading')).toBeInTheDocument()
+    })
+  })
+  
+
+  
