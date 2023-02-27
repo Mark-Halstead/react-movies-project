@@ -4,7 +4,12 @@ body {
   line-height: 1.5;
   font-size: 0.875rem;
   background-color: rgb(246, 210, 242);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+  
 ul {
   list-style-type: none;
 }
@@ -54,7 +59,7 @@ p {
 }
 .form-input {
   width: 100%;
-  border: transparent;
+  border: solid;
   max-width: 600px;
   background: var(--clr-white);
   padding: 1rem;
@@ -64,15 +69,14 @@ p {
   letter-spacing: var(--spacing);
   margin-top: 1rem;
 }
+
+
 .error {
   color: var(--clr-red-dark);
   text-transform: capitalize;
   padding-top: 0.5rem;
   letter-spacing: var(--spacing);
 }
-
-
-
 
 
 
@@ -132,13 +136,6 @@ p {
 .movie:hover .movie-info {
   transform: translateY(0);
 }
-
-
-
-
-
-
-
 
 
 
