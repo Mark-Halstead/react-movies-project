@@ -1,7 +1,8 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 // import ProtectedRoute from './routes'
-import { Home, Movies, NotFound, MovieItem } from './pages'
+import { Home, Movies, NotFound } from './pages'
+import { ShowItem } from "./components"
 import './App.css'
 
 function App() {

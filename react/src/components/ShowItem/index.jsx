@@ -5,21 +5,29 @@ function ShowItem() {
   const { id } = useParams();
   useEffect(() => {
     fetchShows()
+    console.log(show);
   }, [])
 
-  const [show, setShow] = useState({ name: '', summary: '', image: "" });
+  const [show, setShow] = useState([]);
 
   const fetchShows = async () => {
     const fetchShow = await fetch(`https://api.tvmaze.com/shows/${id}`)
-    const show = await fetchShow.json()
-    setShow(show.data)
+    const data = await fetchShow.json()
+    setShow(data)
   }
+
+  const regex = /(<([^>]+)>)/gi
 
   return (
     <>
+    
+    {show && 
+        <>
         <h1>{show.name}</h1>
-        <h1>{show.summary}</h1>
-        <img src={show.image}></img>
+        <img src={show.image?.medium}></img>
+        <p>{show.summary.replace(regex, "")}</p> 
+        </>}
+    
     </>
   )
 }
