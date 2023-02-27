@@ -13,7 +13,6 @@ import Movies from './index';
 
 describe('Movies', () => {
     beforeEach(() => {
-      // Render the Movies component wrapped in BrowserRouter
       render(
         <BrowserRouter>
           <Movies />
