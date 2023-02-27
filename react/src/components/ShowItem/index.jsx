@@ -25,7 +25,7 @@ function ShowItem() {
         <>
         <h1>{show.name}</h1>
         <img src={show.image?.medium}></img>
-        <p>{show.summary.replace(regex, "")}</p> 
+        <p>{show.summary?.replace(regex, "")}</p> 
         </>}
     
     </>
