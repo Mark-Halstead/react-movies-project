@@ -6,20 +6,20 @@ function Movies() {
     fetchItems()
   }, [])
 
-  const [items, setItems] = useState([]);
+  const [shows, setShows] = useState([]);
 
   const fetchItems = async () => {
-    const response = await fetch('');
+    const response = await fetch('https://api.tvmaze.com/shows');
     const movieData = await response.json()
-    setItems(movieData.data)
+    setShows(movieData.data)
   }
 
   return (
     <div>
       <h1>Movies Page</h1>
       <div>
-        {items.map((el) => (
-          <p key={el.id}>
+        {shows.map((show) => (
+          <p key={show.id}>
           <Link to={`/movies/${el.id}`}>{el.name}</Link> 
           </p>
         ))}
